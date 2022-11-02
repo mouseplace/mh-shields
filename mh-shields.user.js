@@ -15,25 +15,6 @@
 	'use strict';
 
 	/**
-	 * Add styles to the page.
-	 *
-	 * @param {string} styles The styles to add.
-	 */
-	const addStyles = (styles) => {
-		const existingStyles = document.getElementById('mh-mouseplace-custom-styles');
-
-		if (existingStyles) {
-			existingStyles.innerHTML += styles;
-			return;
-		}
-
-		const style = document.createElement('style');
-		style.id = 'mh-mouseplace-custom-styles';
-		style.innerHTML = styles;
-		document.head.appendChild(style);
-	};
-
-	/**
 	 * Get the current page slug.
 	 *
 	 * @return {string} The page slug.
@@ -50,7 +31,8 @@
 	/**
 	 * Get the saved settings.
 	 *
-	 * @param {string} key The key to get.
+	 * @param {string}  key          The key to get.
+	 * @param {boolean} defaultValue The default value.
 	 *
 	 * @return {Object} The saved settings.
 	 */
@@ -58,7 +40,7 @@
 		const settings = JSON.parse(localStorage.getItem('mh-mouseplace-settings')) || {};
 
 		if (key) {
-			if ( ! settings.hasOwnProperty(key)) {
+			if (! Object.prototype.hasOwnProperty.call(settings, key)) {
 				return defaultValue;
 			}
 
@@ -229,9 +211,9 @@
 	};
 
 	const changeShield = () => {
-		let classesToUse = []
+		const classesToUse = [];
 
-		shieldChoices.forEach(shield => {
+		shieldChoices.forEach((shield) => {
 			const setting = getSetting(`${ shield }-shield`);
 			if (setting) {
 				classesToUse.push(shield);
@@ -239,28 +221,28 @@
 		});
 
 		const shieldEl = document.querySelector('.mousehuntHud-shield');
-		if (!shieldEl) {
+		if (! shieldEl) {
 			return;
 		}
 
 		// Remove all shield classes.
-		shieldEl.classList.remove( ...shieldChoices );
+		shieldEl.classList.remove(...shieldChoices);
 
 		if (classesToUse.length > 1) {
 			// If there are multiple shields, use a random one.
-			const randomShield = classesToUse[Math.floor(Math.random() * classesToUse.length)];
+			const randomShield = classesToUse[ Math.floor(Math.random() * classesToUse.length) ];
 			shieldEl.classList.add(randomShield);
 		} else if (classesToUse.length === 1) {
 			// If there is only one shield, use that one.
-			shieldEl.classList.add(classesToUse[0]);
+			shieldEl.classList.add(classesToUse[ 0 ]);
 		}
-	}
+	};
 
 	/**
 	 * Add the settings for Simple Travel.
 	 */
 	const addShieldSettings = () => {
-		shieldChoices.forEach(shield => {
+		shieldChoices.forEach((shield) => {
 			const shieldReadable = shield.charAt(0).toUpperCase() + shield.slice(1);
 			addSetting(
 				`Enable ${ shieldReadable } shield`,
