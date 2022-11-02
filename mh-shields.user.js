@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Shields
 // @version      1.0.0
-// @description  Choose between Halloween, Birthday, Valentine's, or a random one.
+// @description  Change the shield shown in the game! Choose between Halloween, Birthday, Valentine's, or a random one.
 // @license      MIT
 // @author       bradp
 // @namespace    bradp
