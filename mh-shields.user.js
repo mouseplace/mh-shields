@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Shields
-// @version      1.0.0
-// @description  Change the shield shown in the game! Choose between Halloween, Birthday, Valentine's, or a random one.
+// @version      1.1.0
+// @description  Choose between Halloween, Birthday, Valentine's, or a random one.
 // @license      MIT
 // @author       bradp
 // @namespace    bradp
@@ -31,8 +31,8 @@
 	/**
 	 * Get the saved settings.
 	 *
-	 * @param {string}  key          The key to get.
-	 * @param {boolean} defaultValue The default value.
+	 * @param {string} key          The key to get.
+	 * @param {string} defaultValue The default value.
 	 *
 	 * @return {Object} The saved settings.
 	 */
@@ -242,21 +242,17 @@
 	 * Add the settings for Simple Travel.
 	 */
 	const addShieldSettings = () => {
-		shieldChoices.forEach((shield) => {
-			const shieldReadable = shield.charAt(0).toUpperCase() + shield.slice(1);
-			addSetting(
-				`Enable ${ shieldReadable } shield`,
-				`${ shield }-shield`,
-				false,
-				`Replaces the normal shield with the ${ shieldReadable } shield. If multiple shields are enabled, a random one will be used.`
-			);
-		});
+		addSetting('Enable Birthday shield', 'halloween-shield', false, 'Replaces the normal shield with the Birthday shield. If multiple shields are enabled, a random one will be used.');
+		addSetting('Enable Halloween shield', 'birthday-shield', false, 'Replaces the normal shield with the Halloween shield. If multiple shields are enabled, a random one will be used.');
+		addSetting('Enable Valentine\'s shield', 'valentines-shield', false, 'Replaces the normal shield with the Valentine\'s shield. If multiple shields are enabled, a random one will be used.');
+		addSetting('Enable Rememberance Day shield', 'remembrance_day-shield', false, 'Replaces the normal shield with the Rememberance Day shield. If multiple shields are enabled, a random one will be used.');
 	};
 
 	const shieldChoices = [
 		'halloween',
 		'birthday',
 		'valentines',
+		'remembrance_day',
 	];
 
 	onPageChange({ change: changeShield });
