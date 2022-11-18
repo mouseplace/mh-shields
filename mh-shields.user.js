@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Shields
-// @version      1.1.0
+// @version      1.1.1
 // @description  Choose between Halloween, Birthday, Valentine's, or a random one.
 // @license      MIT
 // @author       bradp
@@ -245,7 +245,7 @@
 		addSetting('Enable Birthday shield', 'halloween-shield', false, 'Replaces the normal shield with the Birthday shield. If multiple shields are enabled, a random one will be used.');
 		addSetting('Enable Halloween shield', 'birthday-shield', false, 'Replaces the normal shield with the Halloween shield. If multiple shields are enabled, a random one will be used.');
 		addSetting('Enable Valentine\'s shield', 'valentines-shield', false, 'Replaces the normal shield with the Valentine\'s shield. If multiple shields are enabled, a random one will be used.');
-		addSetting('Enable Rememberance Day shield', 'remembrance_day-shield', false, 'Replaces the normal shield with the Rememberance Day shield. If multiple shields are enabled, a random one will be used.');
+		addSetting('Enable Remembrance Day shield', 'remembrance_day-shield', false, 'Replaces the normal shield with the Remembrance Day shield. If multiple shields are enabled, a random one will be used.');
 	};
 
 	const shieldChoices = [
