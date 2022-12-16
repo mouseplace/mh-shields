@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Shields
-// @version      1.1.1
-// @description  Choose between Halloween, Birthday, Valentine's, or a random one.
+// @version      1.2.0
+// @description  Change your MouseHunt shield to an event shield, like the Halloween shield.
 // @license      MIT
 // @author       bradp
 // @namespace    bradp
@@ -244,8 +244,9 @@
 	const addShieldSettings = () => {
 		addSetting('Enable Birthday shield', 'halloween-shield', false, 'Replaces the normal shield with the Birthday shield. If multiple shields are enabled, a random one will be used.');
 		addSetting('Enable Halloween shield', 'birthday-shield', false, 'Replaces the normal shield with the Halloween shield. If multiple shields are enabled, a random one will be used.');
-		addSetting('Enable Valentine\'s shield', 'valentines-shield', false, 'Replaces the normal shield with the Valentine\'s shield. If multiple shields are enabled, a random one will be used.');
 		addSetting('Enable Remembrance Day shield', 'remembrance_day-shield', false, 'Replaces the normal shield with the Remembrance Day shield. If multiple shields are enabled, a random one will be used.');
+		addSetting('Enable Valentine\'s shield', 'valentines-shield', false, 'Replaces the normal shield with the Valentine\'s shield. If multiple shields are enabled, a random one will be used.');
+		addSetting('Enable Great Winter Hunter shield', 'winter_hunt', false, 'Replaces the normal shield with the Great Winter Hunt shield. If multiple shields are enabled, a random one will be used.');
 	};
 
 	const shieldChoices = [
@@ -253,6 +254,7 @@
 		'birthday',
 		'valentines',
 		'remembrance_day',
+		'winter_hunt'
 	];
 
 	onPageChange({ change: changeShield });
