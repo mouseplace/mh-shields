@@ -34,7 +34,7 @@
     });
 
     const shieldEl = document.querySelector('.mousehuntHud-shield');
-    if (!shieldEl) {
+    if (! shieldEl) {
       return;
     }
 
@@ -43,11 +43,11 @@
 
     if (classesToUse.length > 1) {
       // If there are multiple shields, use a random one.
-      const randomShield = classesToUse[Math.floor(Math.random() * classesToUse.length)];
+      const randomShield = classesToUse[ Math.floor(Math.random() * classesToUse.length) ];
       addClass(shieldEl, randomShield);
     } else if (classesToUse.length === 1) {
       // If there is only one shield, use that one.
-      addClass(shieldEl, classesToUse[0]);
+      addClass(shieldEl, classesToUse[ 0 ]);
     }
   };
 
@@ -75,7 +75,7 @@
     addSetting('Jerry ', 'jerry-shield', false, 'Custom shield with Jerry', settingSection);
 
     const settingsSection = document.querySelector('#mh-shields');
-    if (!settingsSection) {
+    if (! settingsSection) {
       return;
     }
 
