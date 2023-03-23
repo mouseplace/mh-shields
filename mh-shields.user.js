@@ -86,7 +86,7 @@
   };
 
   /**
-   * Add the settings for Simple Travel.
+   * Add the settings.
    */
   const addShieldSettings = () => {
     const settingSection = {
