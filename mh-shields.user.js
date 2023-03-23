@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Shields
-// @version      1.5.0
+// @version      1.5.1
 // @description  Change your MouseHunt shield to an event shield, like the Halloween shield.
 // @license      MIT
 // @author       bradp
@@ -140,9 +140,9 @@
   }
 
   .mousehuntHud-shield.jerry.golden {
-    background-image: url(https://brrad.com/mh/shield-jerry.png?10), url(https://www.mousehuntgame.com/images/ui/elements/header_golden_shield.gif?asset_cache_version=2);
+    background-image: url(https://i.mouse.rip/shield-jerry.png), url(https://www.mousehuntgame.com/images/ui/elements/header_golden_shield.gif?asset_cache_version=2);
   }
   .mousehuntHud-shield.jerry {
-    background-image: url(https://brrad.com/mh/shield-jerry.png?10);
+    background-image: url(https://i.mouse.rip/shield-jerry.png);
   }`);
 })());
