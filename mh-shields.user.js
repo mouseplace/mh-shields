@@ -174,11 +174,11 @@
   }
 
   #mh-shields .settingRow {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      flex-direction: row;
-      align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
   }
 
   .mousehuntHud-shield.larrys_football_challenge.golden {
@@ -188,6 +188,7 @@
   .mousehuntHud-shield.scrambles.golden {
     background-image: url(https://i.mouse.rip/shield-scrambles-bawk.png), url(https://www.mousehuntgame.com/images/ui/elements/header_golden_shield.gif?asset_cache_version=2);
   }
+
   .mousehuntHud-shield.scrambles {
     background-image: url(https://i.mouse.rip/shield-scrambles-bawk.png);
   }
@@ -195,6 +196,7 @@
   .mousehuntHud-shield.jerry.golden {
     background-image: url(https://i.mouse.rip/shield-jerry.png), url(https://www.mousehuntgame.com/images/ui/elements/header_golden_shield.gif?asset_cache_version=2);
   }
+
   .mousehuntHud-shield.jerry {
     background-image: url(https://i.mouse.rip/shield-jerry.png);
   }
@@ -202,6 +204,7 @@
   .mousehuntHud-shield.capt-america.golden {
     background-image: url(https://i.mouse.rip/shield-capt-america.png), url(https://www.mousehuntgame.com/images/ui/elements/header_golden_shield.gif?asset_cache_version=2);
   }
+
   .mousehuntHud-shield.capt-america {
     background-image: url(https://i.mouse.rip/shield-capt-america.png);
   }
@@ -255,6 +258,5 @@
     background-size: contain;
     background-repeat: no-repeat;
     filter: drop-shadow(0 0 10px #ff970a);
-  }
-  `);
+  }`);
 })());

@@ -1,6 +1,6 @@
 # 🐭️ Mousehunt - Shields
 
-A Userscript for [MouseHunt](https://mousehuntgame.com) to change your shield to an event shield, like the Halloween shield.
+A Userscript for [MouseHunt](https://mousehuntgame.com) to change your shield!
 
 ## Installation
 
