@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Shields
-// @version      1.6.3
+// @version      1.6.4
 // @description  Change your MouseHunt shield to an event shield, like the Halloween shield.
 // @license      MIT
 // @author       bradp
@@ -9,7 +9,7 @@
 // @icon         https://i.mouse.rip/mouse.png
 // @grant        none
 // @run-at       document-end
-// @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.5.2/mousehunt-utils.js
+// @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.5.3/mousehunt-utils.js
 // ==/UserScript==
 
 ((function () {
