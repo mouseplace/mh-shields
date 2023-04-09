@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Shields
-// @version      1.6.0
+// @version      1.6.3
 // @description  Change your MouseHunt shield to an event shield, like the Halloween shield.
 // @license      MIT
 // @author       bradp
@@ -9,7 +9,7 @@
 // @icon         https://i.mouse.rip/mouse.png
 // @grant        none
 // @run-at       document-end
-// @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.4.0/mousehunt-utils.js
+// @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.5.2/mousehunt-utils.js
 // ==/UserScript==
 
 ((function () {
@@ -89,30 +89,32 @@
    * Add the settings.
    */
   const addShieldSettings = () => {
+    const tab = addSettingsTab();
     const settingSection = {
       id: 'mh-shields',
       name: 'MouseHunt Shields',
     };
 
-    addSetting('Birthday', 'birthday-shield', false, '', settingSection);
-    addSetting('Birthday (Year 10)', 'birthday.year10-shield', false, '', settingSection);
-    addSetting('Birthday (Year 11)', 'birthday.year11-shield', false, '', settingSection);
-    addSetting('Birthday (Year 12)', 'birthday.year12-shield', false, '', settingSection);
-    addSetting('Birthday (Year 13)', 'birthday.year13-shield', false, '', settingSection);
-    addSetting('Birthday (Year 14)', 'birthday.year14-shield', false, '', settingSection);
-    addSetting('Birthday (Year 15)', 'birthday.year15-shield', false, '', settingSection);
-    addSetting('Halloween', 'halloween-shield', false, '', settingSection);
-    addSetting('Remembrance Day', 'remembrance_day-shield', false, '', settingSection);
-    addSetting('Valentine\'s', 'valentines-shield', false, '', settingSection);
-    addSetting('Great Winter Hunter', 'winter_hunt-shield', false, '', settingSection);
-    addSetting('Larry\'s Football Challenge', 'larrys_football_challenge-shield', false, '', settingSection);
-    addSetting('Title ', 'title-shield', false, 'Hunter Title badge', settingSection);
-    addSetting('Fabled ', 'fabled-shield', false, 'Custom shield with Fabled Badge', settingSection);
-    addSetting('Scrambles ', 'scrambles-shield', false, 'Bawk!', settingSection);
-    addSetting('Jerry ', 'jerry-shield', false, 'Custom shield with Jerry', settingSection);
-    addSetting('Romeno ', 'romeno-shield', false, 'Custom shield with Romeno', settingSection);
-    addSetting('Captain America', 'capt-america-shield', false, '', settingSection);
-    addSetting('Hylian Shield', 'hylian-shield', false, '', settingSection);
+    addSetting('Birthday', 'birthday-shield', false, '', settingSection, tab);
+    addSetting('Birthday (Year 10)', 'birthday.year10-shield', false, '', settingSection, tab);
+    addSetting('Birthday (Year 11)', 'birthday.year11-shield', false, '', settingSection, tab);
+    addSetting('Birthday (Year 12)', 'birthday.year12-shield', false, '', settingSection, tab);
+    addSetting('Birthday (Year 13)', 'birthday.year13-shield', false, '', settingSection, tab);
+    addSetting('Birthday (Year 14)', 'birthday.year14-shield', false, '', settingSection, tab);
+    addSetting('Birthday (Year 15)', 'birthday.year15-shield', false, '', settingSection, tab);
+    addSetting('Halloween', 'halloween-shield', false, '', settingSection, tab);
+    addSetting('Remembrance Day', 'remembrance_day-shield', false, '', settingSection, tab);
+    addSetting('Valentine\'s', 'valentines-shield', false, '', settingSection, tab);
+    addSetting('Great Winter Hunter', 'winter_hunt-shield', false, '', settingSection, tab);
+    addSetting('Larry\'s Football Challenge', 'larrys_football_challenge-shield', false, '', settingSection, tab);
+    addSetting('Spring Egg Hunt', 'eggs-shield', false, '', settingSection, tab);
+    addSetting('Title ', 'title-shield', false, 'Hunter Title badge', settingSection, tab);
+    addSetting('Fabled ', 'fabled-shield', false, 'Custom shield with Fabled Badge', settingSection, tab);
+    addSetting('Scrambles ', 'scrambles-shield', false, 'Bawk!', settingSection, tab);
+    addSetting('Jerry ', 'jerry-shield', false, 'Custom shield with Jerry', settingSection, tab);
+    addSetting('Romeno ', 'romeno-shield', false, 'Custom shield with Romeno', settingSection, tab);
+    addSetting('Captain America', 'capt-america-shield', false, '', settingSection, tab);
+    addSetting('Hylian Shield', 'hylian-shield', false, '', settingSection, tab);
 
     const settingsSection = document.querySelector('#mh-shields');
     if (! settingsSection) {
@@ -148,6 +150,7 @@
     'fabled',
     'capt-america',
     'hylian',
+    'eggs',
   ];
 
   onPageChange({ change: changeShield });
@@ -161,24 +164,23 @@
   }
 
   #mh-shields .settings-subheader {
-    color: #848484;
-    font-size: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-size: 10px;
+    color: #848484;
   }
 
   #mh-shields .settingRowTable {
     display: inline-block;
     width: 300px;
-    margin-right: 50px;
+    margin-left: 50px;
   }
 
   #mh-shields .settingRow {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: center;
+    justify-content: space-between;
   }
 
   .mousehuntHud-shield.larrys_football_challenge.golden {
@@ -209,54 +211,68 @@
     background-image: url(https://i.mouse.rip/shield-capt-america.png);
   }
 
-  .mousehuntHud-shield.hylian:after {
-    background-image: url(https://i.mouse.rip/shield-hylian.png?2);
+  .mousehuntHud-shield.hylian::after {
     position: absolute;
     top: -8px;
     left: 7px;
     width: 145px;
     height: 145px;
     content: "";
-    background-size: contain;
+    background-image: url(https://i.mouse.rip/shield-hylian.png?2);
     background-repeat: no-repeat;
+    background-size: contain;
   }
 
-  .mousehuntHud-shield.romeno:after {
-    background-image: url(https://i.mouse.rip/shield-romeno.png);
+  .mousehuntHud-shield.romeno::after {
     position: absolute;
     bottom: -8px;
     left: -30px;
+    z-index: 1;
     width: 140px;
     height: 140px;
     content: "";
-    background-size: contain;
+    background-image: url(https://i.mouse.rip/shield-romeno.png);
     background-repeat: no-repeat;
-    z-index: 1;
+    background-size: contain;
   }
 
   .mousehuntHud-shield.title::after {
-    background-image: url(${titleBadge()});
     position: absolute;
     top: 3px;
     left: 8px;
     width: 120px;
     height: 120px;
     content: "";
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-image: url(${titleBadge()});
     filter: drop-shadow(0 0 10px #ff970a);
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
   .mousehuntHud-shield.fabled::after {
-    background-image: url(https://i.mouse.rip/shield-fabled.png);
     position: absolute;
     top: 3px;
     left: 8px;
     width: 120px;
     height: 120px;
     content: "";
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-image: url(https://i.mouse.rip/shield-fabled.png);
     filter: drop-shadow(0 0 10px #ff970a);
-  }`);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .mousehuntHud-shield.eggs::after {
+    position: absolute;
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    width: 137px;
+    height: 137px;
+    content: "";
+    background-image: url(https://i.mouse.rip/eggs-shield.png);
+    background-repeat: no-repeat;
+    background-size: contain
+  }
+  `);
 })());
