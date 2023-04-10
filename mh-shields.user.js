@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Shields
-// @version      1.6.4
+// @version      1.6.5
 // @description  Change your MouseHunt shield to an event shield, like the Halloween shield.
 // @license      MIT
 // @author       bradp
@@ -107,7 +107,6 @@
     addSetting('Valentine\'s', 'valentines-shield', false, '', settingSection, tab);
     addSetting('Great Winter Hunter', 'winter_hunt-shield', false, '', settingSection, tab);
     addSetting('Larry\'s Football Challenge', 'larrys_football_challenge-shield', false, '', settingSection, tab);
-    addSetting('Spring Egg Hunt', 'eggs-shield', false, '', settingSection, tab);
     addSetting('Title ', 'title-shield', false, 'Hunter Title badge', settingSection, tab);
     addSetting('Fabled ', 'fabled-shield', false, 'Custom shield with Fabled Badge', settingSection, tab);
     addSetting('Scrambles ', 'scrambles-shield', false, 'Bawk!', settingSection, tab);
@@ -150,7 +149,6 @@
     'fabled',
     'capt-america',
     'hylian',
-    'eggs',
   ];
 
   onPageChange({ change: changeShield });
@@ -260,19 +258,6 @@
     filter: drop-shadow(0 0 10px #ff970a);
     background-repeat: no-repeat;
     background-size: contain;
-  }
-
-  .mousehuntHud-shield.eggs::after {
-    position: absolute;
-    position: absolute;
-    top: 2px;
-    left: 0px;
-    width: 137px;
-    height: 137px;
-    content: "";
-    background-image: url(https://i.mouse.rip/eggs-shield.png);
-    background-repeat: no-repeat;
-    background-size: contain
   }
   `);
 })());
