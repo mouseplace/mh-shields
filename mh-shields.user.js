@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Shields
-// @version      1.6.5
+// @version      1.6.6
 // @description  Change your MouseHunt shield to an event shield, like the Halloween shield.
 // @license      MIT
 // @author       bradp
@@ -115,19 +115,6 @@
     addSetting('Romeno ', 'romeno-shield', false, 'Custom shield with Romeno', settingSection, tab);
     addSetting('Captain America', 'capt-america-shield', false, '', settingSection, tab);
     addSetting('Hylian Shield', 'hylian-shield', false, '', settingSection, tab);
-
-    const settingsSection = document.querySelector('#mh-shields');
-    if (! settingsSection) {
-      return;
-    }
-
-    const seperator = settingsSection.querySelector('.separator');
-    const settingSubHeader = document.createElement('h4');
-    settingSubHeader.classList.add('settings-subheader');
-    settingSubHeader.innerText = 'Replaces the default shield. If multiple shields are enabled, a random one will be used.';
-
-    // append the subheader before the separator.
-    settingsSection.insertBefore(settingSubHeader, seperator);
   };
 
   const shieldChoices = [
@@ -168,7 +155,7 @@
   }
 
   #mh-shields .settingRowTable:nth-child(even) {
-    margin-left: 50px;
+    margin-right: 50px;
   }
 
   #mh-shields .settingRow {
