@@ -93,6 +93,7 @@
     const settingSection = {
       id: 'mh-shields',
       name: 'MouseHunt Shields',
+      description: 'Replaces the default shield. If multiple shields are enabled, a random one will be used.',
     };
 
     addSetting('Birthday', 'birthday-shield', false, '', settingSection, tab);
@@ -161,16 +162,12 @@
     display: none;
   }
 
-  #mh-shields .settings-subheader {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 10px;
-    color: #848484;
-  }
-
   #mh-shields .settingRowTable {
     display: inline-block;
     width: 300px;
+  }
+
+  #mh-shields .settingRowTable:nth-child(even) {
     margin-left: 50px;
   }
 
