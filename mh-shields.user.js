@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ Mousehunt - Shields
-// @version      1.6.6
+// @version      1.7.0
 // @description  Change your MouseHunt shield to an event shield, like the Halloween shield.
 // @license      MIT
 // @author       bradp
@@ -10,6 +10,7 @@
 // @grant        none
 // @run-at       document-end
 // @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.5.3/mousehunt-utils.js
+// @require      https://cdn.jsdelivr.net/npm/script-migration@1.1.1
 // ==/UserScript==
 
 ((function () {
@@ -108,6 +109,7 @@
     addSetting('Valentine\'s', 'valentines-shield', false, '', settingSection, tab);
     addSetting('Great Winter Hunter', 'winter_hunt-shield', false, '', settingSection, tab);
     addSetting('Larry\'s Football Challenge', 'larrys_football_challenge-shield', false, '', settingSection, tab);
+    addSetting('Spring Egg Hunt', 'eggs-shield', false, '', settingSection, tab);
     addSetting('Title ', 'title-shield', false, 'Hunter Title badge', settingSection, tab);
     addSetting('Fabled ', 'fabled-shield', false, 'Custom shield with Fabled Badge', settingSection, tab);
     addSetting('Scrambles ', 'scrambles-shield', false, 'Bawk!', settingSection, tab);
@@ -137,6 +139,7 @@
     'fabled',
     'capt-america',
     'hylian',
+    'eggs',
   ];
 
   onPageChange({ change: changeShield });
@@ -243,5 +246,21 @@
     background-repeat: no-repeat;
     background-size: contain;
   }
+
+  .mousehuntHud-shield.eggs::after {
+    position: absolute;
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    width: 137px;
+    height: 137px;
+    content: "";
+    // background-image: url(https://i.mouse.rip/eggs-shield.png);
+    background-image: url(https://i.mouse.rip/shield-eggs-alt.png);
+    background-repeat: no-repeat;
+    background-size: contain
+  }
   `);
+
+  migrateUserscript('🐭️ MouseHunt - Shields', 'https://greasyfork.org/en/scripts/454147-mousehunt-shields');
 })());
